@@ -9,6 +9,7 @@ frontend:
   phases:
     build:
       commands:
+        - echo "Starting FRONTEND build phase"
         - npm run build
   artifacts:
     baseDirectory: dist
@@ -22,6 +23,10 @@ custom:
   phases:
     build:
       commands:
+        - echo "Starting custom build phase"
+        - echo "Current directory: $(pwd)"
+        - echo "Listing directory contents:"
+        - ls -la
         - npm install -g aws-cdk
         - cd cdk
         - pip install -r requirements.txt
